@@ -18,4 +18,14 @@ describe('Task', function(){
       const actual = task.difficulty;
       assert.strictEqual(actual, "Mostly impossible")
     })
+
+    it('Should have an urgency', function(){
+      const actual = task.urgency;
+      assert.strictEqual(actual, "Yesterday")
+    })
+
+    it('Should have a completed status', function(){
+      const actual = task.completed;
+      assert.strictEqual(actual, false);
+    })
 })
