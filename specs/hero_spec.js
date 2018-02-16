@@ -70,7 +70,7 @@ describe('Hero', function(){
     assert.strictEqual(actual, 10);
   })
 
-  it('Should sort tasks by difficulty', function(){
+  it('Should sort tasks by urgency', function(){
     hero.addTask(hardTask);
     hero.addTask(easyTask);
     hero.addTask(mediumTask);
@@ -86,7 +86,15 @@ describe('Hero', function(){
     hero.addTask(easyTask);
     hero.addTask(mediumTask);
     const actual = hero.sortTaskByReward();
-    console.log(hero.tasks);
     assert.strictEqual(actual, 100000);
+  })
+
+  it('Should be able to view complete tasks', function(){
+    hero.addTask(hardTask);
+    easyTask.completed = true;
+    hero.addTask(easyTask);
+    hero.addTask(mediumTask);
+    const actual = hero.completedTasks();
+    assert.deepStrictEqual(actual, [easyTask]);
   })
 });

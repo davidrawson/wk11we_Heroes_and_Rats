@@ -26,24 +26,31 @@ Hero.prototype.addTask = function(task){
 }
 
 Hero.prototype.sortTaskByDifficulty = function(){
-    this.tasks.sort(function(elementA, elementB){
-      return elementB.difficulty -  elementA.difficulty;
-    })
-    return this.tasks[0].difficulty;
+  this.tasks.sort(function(elementA, elementB){
+    return elementB.difficulty -  elementA.difficulty;
+  })
+  return this.tasks[0].difficulty;
 }
 
 Hero.prototype.sortTaskByUrgency = function(){
-    this.tasks.sort(function(elementA, elementB){
-      return elementB.urgency -  elementA.urgency;
-    })
-    return this.tasks[0].urgency;
+  this.tasks.sort(function(elementA, elementB){
+    return elementB.urgency -  elementA.urgency;
+  })
+  return this.tasks[0].urgency;
 }
 
 Hero.prototype.sortTaskByReward = function(){
-    this.tasks.sort(function(elementA, elementB){
-      return elementB.reward -  elementA.reward;
-    })
-    return this.tasks[0].reward;
+  this.tasks.sort(function(elementA, elementB){
+    return elementB.reward -  elementA.reward;
+  })
+  return this.tasks[0].reward;
+}
+
+Hero.prototype.completedTasks = function(){
+  const newArray = this.tasks.filter(function(element){
+    return (element.completed === true);
+  })
+  return newArray;
 }
 
 
