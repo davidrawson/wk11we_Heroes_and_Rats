@@ -1,0 +1,22 @@
+{
+  "name": "heroesandrats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hero.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidrawson/wk11we_Heroes_and_Rats.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidrawson/wk11we_Heroes_and_Rats/issues"
+  },
+  "homepage": "https://github.com/davidrawson/wk11we_Heroes_and_Rats#readme",
+  "devDependencies": {
+    "mocha": "^5.0.1"
+  }
+}

@@ -8,3 +8,6 @@ const Hero = function(name, health, favouriteFood){
 Hero.prototype.canTalk = function(){
   console.log("Hi, I'm", this.name);
 }
+
+
+module.exports = Hero;
