@@ -53,6 +53,12 @@ Hero.prototype.completedTasks = function(){
   return newArray;
 }
 
+Hero.prototype.incompleteTasks = function(){
+  const newArray = this.tasks.filter(function(element){
+    return (element.completed === false);
+  })
+  return newArray;
+}
 
 // You must remeber to tell it WHAT to export.
 // Don't keep making that mistake.

@@ -97,4 +97,15 @@ describe('Hero', function(){
     const actual = hero.completedTasks();
     assert.deepStrictEqual(actual, [easyTask]);
   })
+
+  it('Should be able to view incomplete tasks', function(){
+    hero.addTask(hardTask);
+    easyTask.completed = true;
+    hero.addTask(easyTask);
+    mediumTask.completed = true;
+    hero.addTask(mediumTask);
+    const actual = hero.incompleteTasks();
+    assert.deepStrictEqual(actual, [hardTask]);
+  })
+
 });
