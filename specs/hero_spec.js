@@ -2,11 +2,13 @@ const assert = require('assert');
 const Hero = require('../hero.js');
 const Food = require('../food.js');
 const Task = require('../task.js');
+const Rat = require('../rat.js');
 
 describe('Hero', function(){
 
   let hero;
   let food;
+  let rat;
 
   beforeEach(function(){
     hero = new Hero("Westley", 50, "bigos");
@@ -15,6 +17,7 @@ describe('Hero', function(){
     hardTask = new Task("Rescue Buttercup", 10, 7, 100000);
     easyTask = new Task("Go to shops for milk", 1, 10, 2);
     mediumTask = new Task("Rescue cat from tree", 5, 6, 5000);
+    rat = new Rat();
 
     // hero = new Hero("Westley", "Mostly Dead", "bigos");
   });
@@ -106,6 +109,13 @@ describe('Hero', function(){
     hero.addTask(mediumTask);
     const actual = hero.incompleteTasks();
     assert.deepStrictEqual(actual, [hardTask]);
+  })
+
+  it('Should be made ill by poisonous food', function(){
+    rat.touchFood(food);
+    hero.eat(food);
+    const actual = hero.health;
+    assert.strictEqual(actual, 42);
   })
 
 });
